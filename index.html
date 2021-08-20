@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Loading...</title>
+</head>
+<body>
+    
+    <h1>Loading, please wait...</h1>
+    <progress value="10" max="100"></progress>
+   
+    <style>
+        
+        body {
+            background-color: #000;
+        }
+
+        h1 {
+            font-family: 'Poppins';
+            color: #fff;
+            position: absolute;
+            top: 35%;
+            right: 40%;
+        }
+
+        progress {
+            position: absolute;
+            top: 50%;
+            right: 43%;
+            width: 250px;
+            height: 25px;
+            border: 1px solid #E72849;     
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        ::-webkit-progress-bar{
+            background-color: #fff;
+
+        }
+        
+        ::-webkit-progress-value{
+            background-color: #E72849;
+        }
+
+    </style>
+
+    <script>
+
+        let progressBar = document.querySelector("progress")
+        let progressBarValue = 0       
+
+        function animationBar(speed, add) {
+
+            if (add) {
+                progressBarValue++ 
+            } else {
+                progressBarValue = 0
+            }
+            
+            progressBar.setAttribute('value', progressBarValue);
+            setTimeout( ()=> {fillBar()}, speed )
+
+        }
+
+        function fillBar() {
+
+            if (progressBarValue < 101){
+                animationBar(40, true)
+            } else {
+                animationBar()
+            }
+
+        }
+
+        fillBar()
+
+    </script>
+
+</body>
+</html>
