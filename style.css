@@ -1,0 +1,31 @@
+body {
+    background-color: #000;
+}
+
+h1 {
+    font-family: 'Poppins';
+    color: #fff;
+    position: absolute;
+    top: 35%;
+    right: 40%;
+}
+
+progress {
+    position: absolute;
+    top: 50%;
+    right: 43%;
+    width: 250px;
+    height: 25px;
+    border: 1px solid #E72849;     
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+::-webkit-progress-bar{
+    background-color: #fff;
+
+}
+
+::-webkit-progress-value{
+    background-color: #E72849;
+}
